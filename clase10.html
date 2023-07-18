@@ -51,19 +51,20 @@
 
         .order {
             display: grid;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: auto 1fr auto;
             gap: 16px;
             align-items: center;
-            background-color: var(--text-input-field);
-            box-shadow: 6px 6px 2px var(--hospital-green);
-            margin-bottom: 24px;
-            border-radius: 8px;
-            padding: 0 24px;
+            margin-bottom: 4px;
+            box-shadow: 4px 4px 1px var(--hospital-green);
+            border-radius: 4%;
+            padding: 0 14px 0 14px;
+            cursor: pointer;
         }
 
         .order p:nth-child(1){
             display: flex;
             flex-direction: column;
+            
         }
 
         .order p span:nth-child(1){
@@ -82,40 +83,12 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        .shopping-card {
-            display: grid;
-            grid-template-columns: auto 1fr auto auto;
-            gap: 16px;
-            margin-bottom: 24px;
-            align-items: center;
-        }
-
-        .shopping-card figure {
-            margin: 0;
-        }
-        .shopping-card figure img {
-            width: 90px;
-            height: 90px;
-            border-radius: 20px;
-            object-fit: cover;
-        }
-
-        .shopping-card p:nth-child(2){
-            color: var(--very-light-pink);
-        }
-        
-        .shopping-card p:nth-child(3){
-            font-size: var(--md);
-            font-weight: bold;
-            font-family: 'Roboto', sans-serif;
-        }
-
     </style>
 </head>
 <body>
     <div class="my-order">
         <div class="my-order-container">
-            <h1 class="title">My order</h1>
+            <h1 class="title">My orders</h1>
 
             <div class="my-order-content">
                 <div class="order">
@@ -124,28 +97,47 @@
                         <span>3 articles</span>
                     </p>
                     <p>$132,00</p>
+                    <img src="./icons/flechita.svg" alt="arrow">
                 </div>
-
-                <div class="shopping-card">
-                    <figure>
-                        <img src="https://images.pexels.com/photos/11074451/pexels-photo-11074451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="bike">
-                    </figure>
-                    <p>Bike</p>
-                    <p>$120,00</p>
+                <div class="order">
+                    <p>
+                        <span>10.07.2023</span>
+                        <span>2 articles</span>
+                    </p>
+                    <p>$50,00</p>
+                    <img src="./icons/flechita.svg" alt="arrow">
                 </div>
-                <div class="shopping-card">
-                    <figure>
-                        <img src="https://images.pexels.com/photos/8266891/pexels-photo-8266891.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Rucksack">
-                    </figure>
-                    <p>Rucksack</p>
-                    <p>$10,00</p>
+                <div class="order">
+                    <p>
+                        <span>16.05.2023</span>
+                        <span>6 articles</span>
+                    </p>
+                    <p>$170,00</p>
+                    <img src="./icons/flechita.svg" alt="arrow">
                 </div>
-                <div class="shopping-card">
-                    <figure>
-                        <img src="https://images.pexels.com/photos/16649920/pexels-photo-16649920/free-photo-of-plato-flores-petalos-tazas.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Cup of coffee">
-                    </figure>
-                    <p>Cup of coffee</p>
-                    <p>$2,00</p>
+                <div class="order">
+                    <p>
+                        <span>25.03.2023</span>
+                        <span>1 articles</span>
+                    </p>
+                    <p>$30,00</p>
+                    <img src="./icons/flechita.svg" alt="arrow">
+                </div>
+                <div class="order">
+                    <p>
+                        <span>08.02.2023</span>
+                        <span>6 articles</span>
+                    </p>
+                    <p>$240,00</p>
+                    <img src="./icons/flechita.svg" alt="arrow">
+                </div>
+                <div class="order">
+                    <p>
+                        <span>02.02.2023</span>
+                        <span>1 articles</span>
+                    </p>
+                    <p>$5,00</p>
+                    <img src="./icons/flechita.svg" alt="arrow">
                 </div>
             </div>
         </div>

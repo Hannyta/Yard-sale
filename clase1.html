@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Yard Sale</title>
     <style>
 
         :root {
@@ -24,6 +24,84 @@
         body{
             margin: 0;
             font-family: 'Quicksand', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 24px;
+            box-shadow: 0 0.36px 0.46px var(--very-light-pink);
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .logo-navbar {
+            width: 140px;
+        }
+
+        .navbar-left {
+            display: flex;
+        }
+
+        .navbar-left li:nth-child(1) {
+            margin-left: 28px;
+        }
+
+        .navbar-left ul li a, .navbar-rigth ul li a {
+            text-decoration: none;
+            color: var(--very-light-pink);
+            border: 1px solid var(--white);
+            padding: 4px;
+            border-radius: 8px;
+            margin: 0 8px;
+        }
+
+        .navbar-left ul li a:hover, .navbar-rigth ul li a:hover {
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+        }
+
+        .navbar-left ul, .navbar-right ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            height: 60px;
+        }
+
+        .navbar-email {
+            font-weight: bold;
+            color: var(--hospital-green);
+            font-size: var(--sm);
+            margin-right: 24px;
+        }
+        
+        .navbar-email img{
+            margin-left: 10px;
+            transform: rotate(90deg);
+            margin-right: 12px;
+        }
+
+        .navbar-shopping-cart {
+            position: relative;
+        }
+
+        .navbar-shopping-cart div {
+            width: 16px;
+            height: 16px;
+            background-color: var(--hospital-green);
+            border-radius: 50%;
+            font-size: var(--sm);
+            font-weight: bold;
+            position: absolute;
+            top: -6px;
+            right: -3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .login {
@@ -55,7 +133,7 @@
         .subtitle {
             color: var(--very-light-pink);
             font-size: var(--md);
-            font-weight: 300;
+            font-weight: 500;
             margin-top: 0;
             margin-bottom: 32px;
             text-align: center;
@@ -67,7 +145,7 @@
         }
 
         .label {
-            font-size: --sm;
+            font-size: var(--sm);
             font-weight: bold;
             margin-bottom: 4px;
         }
@@ -99,14 +177,73 @@
             margin-bottom: 30px;
         }
 
+        @media (max-width: 828px) {
+
+            .logo-navbar { width: 80px;}
+
+            .navbar-left li:nth-child(1) { margin-left: 2px;}
+
+            .navbar-left ul li a, .navbar-rigth ul li a { margin: 0px;}
+        }
+
         @media (max-width: 640px) {
             .logo {
                 display: block
             }
+            
+            nav {
+                display: none;
+            }
+
+            .login {
+            margin-top: -70px;
         }
+        }
+
     </style>
 </head>
 <body>
+    <nav>
+        <img src="./icons/icon_menu.svg" alt="menu" class="menu">
+    
+        <div class="navbar-left">
+            <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo-navbar">
+            
+                <ul>
+                    <li>
+                        <a href="/">All</a>
+                    </li>
+                    <li>
+                        <a href="/">Clothes</a>
+                    </li>
+                    <li>
+                        <a href="/">Electronics</a>
+                    </li>
+                    <li>
+                        <a href="/">Furniture</a>
+                    </li>
+                    <li>
+                        <a href="/">Toys</a>
+                    </li>
+                    <li>
+                        <a href="/">Othes</a>
+                    </li>
+                </ul>
+        </div>
+
+        <div class="navbar-right">
+           
+            <ul>
+                <li class="navbar-email">Sign in</li>
+                <li class="navbar-shopping-cart">
+                    <img src="./icons/icon_shopping_cart.svg" alt="icon-shopping-cart">
+                <div></div>
+                </li>
+            </ul>
+           
+        </div>
+    </nav>
+
     <div class="login">
         <div class="form-container">
             <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
@@ -118,10 +255,10 @@
                 <label for="password" class="label">Password</label>
                 <input type="password" id="password" placeholder="*********" class="input input-password">
 
-                <label for="newpassword" class="label">Password</label>
+                <label for="newpassword" class="label">Re-enter Password</label>
                 <input type="password" id="password" placeholder="*********" class="input input-password">
 
-                <input type="submit" value="Condirm" class="primary-button login-button">
+                <input type="submit" value="Confirm" class="primary-button login-button">
             </form>
         </div>
     </div>

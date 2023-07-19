@@ -26,21 +26,105 @@
             font-family: 'Quicksand', sans-serif;
         }
 
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 24px;
+            box-shadow: 0 0.36px 0.46px var(--very-light-pink);
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .logo-navbar {
+            width: 140px;
+        }
+
+        .navbar-left {
+            display: flex;
+        }
+
+        .navbar-left li:nth-child(1) {
+            margin-left: 28px;
+        }
+
+        .navbar-left ul li a, .navbar-rigth ul li a {
+            text-decoration: none;
+            color: var(--very-light-pink);
+            border: 1px solid var(--white);
+            padding: 4px;
+            border-radius: 8px;
+            margin: 0 8px;
+        }
+
+        .navbar-left ul li a:hover, .navbar-rigth ul li a:hover {
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+        }
+
+        .navbar-left ul, .navbar-right ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            height: 60px;
+        }
+
+        .navbar-email {
+            font-weight: bold;
+            color: var(--hospital-green);
+            font-size: var(--sm);
+            margin-right: 24px;
+        }
+        
+        .navbar-email img{
+            margin-left: 10px;
+            transform: rotate(90deg);
+            margin-right: 12px;
+        }
+
+        .navbar-shopping-cart {
+            position: relative;
+        }
+
+        .navbar-shopping-cart div {
+            width: 16px;
+            height: 16px;
+            background-color: var(--hospital-green);
+            border-radius: 50%;
+            font-size: var(--sm);
+            font-weight: bold;
+            position: absolute;
+            top: -6px;
+            right: -3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .login {
             width: 100%;
             height: 100vh;
             display: grid;
             place-items: center;
+            margin-top: 4px;
         }
 
         .form-container {
             display: grid;
             grid-template-rows: auto 1fr auto;
+            place-items: center;
             width: 300px;
         }
 
+        .close {
+            display: none;
+        }
+
         .logo {
-            width: 150px;
+            width: 180px;
             margin-bottom: 48px;
             justify-self: center;
             display: none;
@@ -108,6 +192,15 @@
             margin-bottom: 30px;
         }
 
+        @media (max-width: 828px) {
+
+            .logo-navbar { width: 80px;}
+
+            .navbar-left li:nth-child(1) { margin-left: 2px;}
+
+            .navbar-left ul li a, .navbar-rigth ul li a { margin: 0px;}
+        }
+
         @media (max-width: 640px) {
             
             .logo {
@@ -115,30 +208,90 @@
             }
 
             .secondary-button {
-            margin-top: 90%;
+                 width: 300px;
+                position: absolute;
+                bottom: 0;
+                 margin-bottom: 24px;
             }
+
+            nav {
+                display: none;
+            }
+
+            .close {
+            display: inline-flex;
+            justify-content: flex-end;
+            position: absolute;
+            top: 18px;
+            right: 14px;
         }
+
+        }
+
     </style>
 </head>
 <body>
+    <nav>
+        <img src="./icons/icon_menu.svg" alt="menu" class="menu">
+    
+        <div class="navbar-left">
+            <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo-navbar">
+            
+                <ul>
+                    <li>
+                        <a href="/">All</a>
+                    </li>
+                    <li>
+                        <a href="/">Clothes</a>
+                    </li>
+                    <li>
+                        <a href="/">Electronics</a>
+                    </li>
+                    <li>
+                        <a href="/">Furniture</a>
+                    </li>
+                    <li>
+                        <a href="/">Toys</a>
+                    </li>
+                    <li>
+                        <a href="/">Othes</a>
+                    </li>
+                </ul>
+        </div>
+
+        <div class="navbar-right">
+           
+            <ul>
+                <li class="navbar-email">Sign in</li>
+                <li class="navbar-shopping-cart">
+                    <img src="./icons/icon_shopping_cart.svg" alt="icon-shopping-cart">
+                <div></div>
+                </li>
+            </ul>
+           
+        </div>
+    </nav>
+
     <div class="login">
         <div class="form-container">
+            <img src="./icons/icon_close.png" alt="close" class="close">
             <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
-
+    
             <form action="/" class="form">
                 <label for="email" class="label">Email address</label>
                 <input type="text" id="email" placeholder="platzi@example.com" class="input input-email">
-
+    
                 <label for="password" class="label">Password</label>
                 <input type="password" id="password" placeholder="*********" class="input input-password">
-
+    
                 <input type="submit" value="Log in" class="primary-button login-button">
-
+    
                 <a href="/">Forgot my password</a>
-
+    
             </form>
-
+        
             <button class="secondary-button signup-button">Sign up</button>
+            
         </div>
     </div>
 </body>
